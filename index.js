@@ -9,7 +9,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Create an instance of the Express application
 const app = express();
-const port = 3000; // Port the server will run on
+// Port the server will run on
+const port = process.env.PORT || 3000;
 
 // Variables to store the password and its validity status
 let password = "";
@@ -43,11 +44,6 @@ function checkPassword(req, res, next) {
 // Use the custom password-checking middleware for all routes
 app.use(checkPassword);
 
-// Start the server and listen on the specified port
-app.listen(port, () => {
-    console.log(`Server running on port ${port}.`); // Log a message when the server starts
-});
-
 // GET request handler for the root route ("/")
 app.get("/", (req, res) => {
     // Send the index.html file as the response
@@ -67,4 +63,9 @@ app.post("/check", (req, res) => {
         // If incorrect, reload the index.html file
         res.sendFile(__dirname + "/public/error.html");
     }
+});
+
+// Start the server and listen on the specified port
+app.listen(port, () => {
+    console.log(`Server running on port ${port}.`); // Log a message when the server starts
 });
