@@ -1,4 +1,4 @@
-# Secrets Login App
+# Secrets Express Project
 
 This repository contains the source code for **Secrets**, a simple login app where users can input a password to access hidden secrets. The project is built using **Node.js**, **Express**, and custom middleware to handle password validation.
 
