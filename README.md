@@ -1,5 +1,8 @@
 # Secrets Express Project
 
+[![Azure DevOps](https://img.shields.io/badge/Deployed%20via-Azure%20DevOps-blue)](https://dev.azure.com/Junaid-Arif/Secrets%20Express%20Project)
+[![Azure App Service](https://img.shields.io/badge/Hosted%20on-Azure%20App%20Service-brightgreen)](https://secrets-app-hra6bng4agdvbte0.canadacentral-01.azurewebsites.net)
+
 This repository contains the source code for **Secrets**, a simple login app where users can input a password to access hidden secrets. The project is built using **Node.js**, **Express**, and custom middleware to handle password validation.
 
 ---
