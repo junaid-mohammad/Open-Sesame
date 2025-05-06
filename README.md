@@ -26,27 +26,6 @@ Additionally, this project provided an opportunity to practice creating user-fri
 
 ---
 
-## 🚀 Deployment on Azure
-
-The Secrets Login App is deployed on **Microsoft Azure** using **App Service**. Below is a summary of the steps taken to deploy the project:
-
-1. **Created an Azure Organization**: Set up a project in **Azure DevOps**.
-2. **Pushed the Code to Azure Repos**: Used the following commands to add Azure as a remote repository and push the code:
-   ```bash
-   git remote add azure https://Junaid-Arif@dev.azure.com/Junaid-Arif/Secrets%20Express%20Project/_git/Secrets%20Express%20Project
-   git push azure --all
-   ```
-3. **Configured App Service**:
-   - Created a new **App Service** in Azure.
-   - Linked the Azure Repo to the App Service for continuous deployment.
-4. **Set Environment Variables**: Configured the app to use the correct port with:
-   ```javascript
-   const port = process.env.PORT || 3000;
-   ```
-5. **Restarted the Service**: Restarted the Azure App Service to finalize the deployment.
-
----
-
 ## 🛠️ Features
 
 - **Login Page**: A simple form for users to input a password to access hidden secrets.
@@ -76,6 +55,73 @@ The Secrets Login App is deployed on **Microsoft Azure** using **App Service**. 
 
 ---
 
+## 🚀 Deployment & Workflow
+
+The **Secrets Express Project** app is hosted on **Microsoft Azure App Service** and deployed using **Azure DevOps**, with code managed on **GitHub**.
+
+### 🛠 Deployment Setup
+
+The **Secrets Express Project** app is hosted on **Microsoft Azure App Service** with the code managed across **GitHub** and **Azure DevOps**.
+
+### 🛠 Deployment Setup (Steps We Took)
+
+1. **Created Azure App Service**
+
+   - Set up a new App Service instance through the Azure portal.
+
+2. **Created GitHub Repo**
+
+   - Initialized a new GitHub repository (`Secrets-Express-Project`) and pushed all project files to it.
+
+3. **Created Azure DevOps Project**
+
+   - Created a project called _Secrets Express Project_ in Azure DevOps.
+
+4. **Added Azure DevOps as a Git Remote**
+
+   - Used the following to connect local code to Azure DevOps:
+     ```bash
+     git remote add azure https://Junaid-Arif@dev.azure.com/Junaid-Arif/Secrets%20Express%20Project/_git/Secrets%20Express%20Project
+     ```
+
+5. **Push to Both Remotes**
+
+   - Pushed the same codebase to both GitHub (`origin`) and Azure DevOps (`azure`):
+     ```bash
+     git push origin main
+     git push azure main
+     ```
+
+6. **Configured Azure App Service to Pull from Azure DevOps Repo**
+
+   - In the App Service Deployment Center, linked the Azure DevOps repo for Continuous Deployment (CI/CD).
+
+7. **Deployment Trigger Testing**
+
+   - Confirmed that pushing to Azure DevOps automatically triggers a deployment to Azure App Service.
+
+8. **Port Configuration**
+   - No custom environment variables required since the app already supports:
+     ```javascript
+     const port = process.env.PORT || 3000;
+     ```
+
+---
+
+### 🔥 Deployment Workflow (Current)
+
+Whenever you update code:
+
+```bash
+git add .
+git commit -m "Your commit message"
+git push origin main   # Pushes to GitHub
+git push azure main    # Pushes to Azure DevOps and triggers deployment
+
+```
+
+---
+
 ## 🤝 Contribution
 
 If you have ideas to improve the Secrets app—such as enhancing the UI or adding more security features—feel free to fork the repository and submit a pull request. Contributions are always welcome!
@@ -85,3 +131,7 @@ If you have ideas to improve the Secrets app—such as enhancing the UI or addin
 ## 📄 License
 
 This project is open-source and available for anyone to use as a learning resource or to build upon for their own projects.
+
+```
+
+```
