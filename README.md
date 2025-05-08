@@ -85,8 +85,6 @@ The **Open Sesame** app is hosted on **Microsoft Azure App Service** and deploye
    git remote add azure https://Junaid-Arif@dev.azure.com/Junaid-Arif/Open%20Sesame/_git/Open%20Sesame
    ```
 
-````
-
 5. **Push to Both Remotes**
 
    ```bash
@@ -130,4 +128,3 @@ If you have ideas to improve Open Sesame—such as enhancing the UI or adding ne
 ## 📄 License
 
 This project is open-source and available for anyone to use as a learning resource or to build upon for their own projects.
-````
